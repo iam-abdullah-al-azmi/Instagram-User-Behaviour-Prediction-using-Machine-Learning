@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.6"
+__generated_with = "0.24.0"
 app = marimo.App(
     width="medium",
     app_title="crimson-nebula",
@@ -17,7 +17,6 @@ def _():
     import seaborn as sns
     import matplotlib.pyplot as plt
 
-
     # Sklearn preprocessing libraries
     from sklearn.pipeline import Pipeline
     from sklearn.decomposition import PCA
@@ -30,33 +29,26 @@ def _():
         RandomizedSearchCV,
     )
 
-
     # Regression libraries
     from sklearn.linear_model import LinearRegression, Ridge
     from sklearn.ensemble import VotingRegressor, StackingRegressor
     from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 
+    # fg-data-profiling
+    from data_profiling import ProfileReport
 
-    # Y-data profinling
-    from ydata_profiling import ProfileReport
-
-
-    # metrices
+    # Metrices
     from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-
-    # ignore warnings
+    # Ignore warnings
     import warnings
 
     warnings.filterwarnings("ignore")
 
-
-    # logging
+    # Logging
     import logging
     from pathlib import Path
 
-
-    np.random.seed(42)
     return (
         ColumnTransformer,
         GradientBoostingRegressor,
@@ -84,6 +76,12 @@ def _():
         r2_score,
         train_test_split,
     )
+
+
+@app.cell
+def _(np):
+    np.random.seed(42)
+    return
 
 
 @app.cell

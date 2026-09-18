@@ -1,0 +1,9 @@
+numpy
+mlflow
+marimo
+pandas
+gradio
+sklearn
+seaborn
+matplotlib
+fg-data-profiling
